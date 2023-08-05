@@ -321,6 +321,7 @@ iTJSDispatch2 * k2z_tTVPWindow::GetWindowDispatch(k2_iTVPWindow *window) {
 iTJSDispatch2 * __attribute__((optimize("O0"))) k2z_tTVPWindow::GetWindowDispatch(k2_iTVPWindow *window) {
 	void *method = (*(reinterpret_cast<void***>(window)))[12]; // __vfptr[12] == GetWindowDispatch
 	iTJSDispatch2 * result = 0;
+#if defined(__i386__) || defined(_M_IX86)
 	__asm__ volatile ("mov %%eax, %1\n\t" // eax = this
 		"call *%2\n\t"
 		"mov %0, %%eax\n\t"
@@ -328,6 +329,7 @@ iTJSDispatch2 * __attribute__((optimize("O0"))) k2z_tTVPWindow::GetWindowDispatc
 		: "r"(window), "r"(method)
 		: "%eax"
 	);
+#endif
 	return result;
 }
 #else
