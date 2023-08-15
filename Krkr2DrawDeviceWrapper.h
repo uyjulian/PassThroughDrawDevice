@@ -2,7 +2,11 @@
 #ifndef __KRKR2DRAWDEVICEWRAPPER_H__
 #define __KRKR2DRAWDEVICEWRAPPER_H__
 
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <windows.h>
+#include <objidl.h>
 #include "tp_stub.h"
 
 //---------------------------------------------------------------------------

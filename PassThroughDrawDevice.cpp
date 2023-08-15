@@ -9,7 +9,11 @@
 //!@file "PassThrough" 描画デバイス管理
 //---------------------------------------------------------------------------
 #define NOMINMAX
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <windows.h>
+#include <objidl.h>
 #if 0
 #include "tjsCommHead.h"
 #endif

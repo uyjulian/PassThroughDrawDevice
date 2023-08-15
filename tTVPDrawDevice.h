@@ -2,7 +2,11 @@
 #ifndef __TTVPDRAWDEVICE_H__
 #define __TTVPDRAWDEVICE_H__
 
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <windows.h>
+#include <objidl.h>
 #include "tp_stub.h"
 
 // 吉里吉里Z の tp_stub でないとコンパイルできない（判定はとりあえず片方にしか存在しないdefineで判定）
