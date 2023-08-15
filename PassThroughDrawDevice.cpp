@@ -14,6 +14,7 @@
 #endif
 #include <windows.h>
 #include <objidl.h>
+#include <timeapi.h>
 #if 0
 #include "tjsCommHead.h"
 #endif
