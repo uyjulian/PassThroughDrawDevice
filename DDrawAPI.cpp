@@ -29,7 +29,7 @@ static tjs_int TVPGetDisplayColorFormat()
 	HDC desktopdc = GetDC(0);
 	HDC bitmapdc = CreateCompatibleDC(desktopdc);
 	HBITMAP bmp = CreateCompatibleBitmap(desktopdc, 1, 1);
-	HBITMAP oldbmp = SelectObject(bitmapdc, bmp);
+	HBITMAP oldbmp = (HBITMAP)SelectObject(bitmapdc, bmp);
 
 	int count;
 	int r, g, b;

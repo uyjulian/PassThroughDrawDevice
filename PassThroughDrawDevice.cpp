@@ -363,7 +363,7 @@ public:
 			points[3].y = rbottom -1;
 			points[4] = points[0];
 
-			oldpen = SelectObject(TargetDC, BluePen);
+			oldpen = (HPEN)SelectObject(TargetDC, BluePen);
 			SetROP2(TargetDC, R2_NOTMASKPEN);
 			Polyline(TargetDC, points, 4);
 
@@ -451,7 +451,7 @@ public:
 					param->Self->OffScreenDC     = CreateCompatibleDC(screendc);
 					if(!param->Self->OffScreenDC) TVPThrowExceptionMessage(TJS_W("Failed to create offscreen DC"));
 					ReleaseDC(param->Self->TargetWindow, screendc);
-					param->Self->OldOffScreenBitmap = SelectObject(param->Self->OffScreenDC, param->Self->OffScreenBitmap);
+					param->Self->OldOffScreenBitmap = (HBITMAP)SelectObject(param->Self->OffScreenDC, param->Self->OffScreenBitmap);
 				}
 				static bool TJS_USERENTRY Catch(void * data, const tTVPExceptionDesc & desc) {
 					CreateBitmapTryCatchBlock *param = reinterpret_cast<CreateBitmapTryCatchBlock *>(data);
@@ -953,7 +953,7 @@ public:
 
 			HPEN oldpen;
 
-			oldpen = SelectObject(s1dc, white_pen);
+			oldpen = (HPEN)SelectObject(s1dc, white_pen);
 			SetROP2(s1dc, R2_COPYPEN);
 			for(int i = 0; i < 100; i += 2)
 			{
